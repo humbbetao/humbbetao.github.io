@@ -5,6 +5,13 @@ import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import Slider from "./Slider";
 import { useHistory } from "react-router-dom";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
+
 const Label = styled.div`
   font-style: normal;
   font-weight: bold;
@@ -28,7 +35,8 @@ const useStyles = makeStyles(theme => ({
     flex: "1",
     width: "100%",
     flexDirection: "row",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    backgroundColor: "#8A1BB2"
   },
   rootPaper: {
     backgroundColor: "#ccc",
@@ -42,6 +50,9 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: "#9b51e0",
     color: "#fff",
     width: "100%"
+  },
+  formControl: {
+    margin: theme.spacing(3)
   }
 }));
 
@@ -49,24 +60,29 @@ export default function Trails(props) {
   console.log(props);
   const classes = useStyles();
   let history = useHistory();
+  const [value, setValue] = React.useState("female");
+
+  const handleChange = event => {
+    setValue(event.target.value);
+  };
+
   return (
     <div className={classes.root}>
-      <Label>Trilha recomendada </Label>
-      <Spacing height={2} />
-      <Paper classes={{ root: classes.rootPaper }} elevation={3}>
-        <Button
-          onClick={() => history.push("./clicked")}
-          variant="contained"
-          classes={{ root: classes.rootButton }}
-        >
-          Primary
-        </Button>
-      </Paper>
-      <Spacing height={4} />
-      <Label> Similares a Engenheira Mecatrônica</Label>
-      <Container>
-        <Slider></Slider>
-      </Container>
+      <Label fontSize="20px">Esse conteúdo foi útil para você? </Label>
+      <Button
+        onClick={() => history.push("./clicked4")}
+        variant="contained"
+        classes={{ root: classes.rootButton }}
+      >
+        Primary
+      </Button>
+      <Button
+        onClick={() => history.push("./clicked4")}
+        variant="contained"
+        classes={{ root: classes.rootButton }}
+      >
+        Primary
+      </Button>
     </div>
   );
 }

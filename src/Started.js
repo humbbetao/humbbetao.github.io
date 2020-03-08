@@ -47,7 +47,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function Started() {
   const classes = useStyles();
-  console.log('Novo')
   return (
     <div>
       <Label> Similares a Engenheira Mecatrônica</Label>
