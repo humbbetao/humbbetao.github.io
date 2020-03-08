@@ -84,7 +84,7 @@ export default function Home(props) {
       <TabPanel p={3} value={value} index={0}>
         <TrilhaSelected/>
       </TabPanel>
-    
+  
       <TabsBottom />
     </div>
   );

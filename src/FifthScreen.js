@@ -68,8 +68,7 @@ export default function Trails(props) {
 
   return (
     <div className={classes.root}>
-Preimiação
-
+      Preimiação
       <Button
         onClick={() => history.push("./clicked6")}
         variant="contained"

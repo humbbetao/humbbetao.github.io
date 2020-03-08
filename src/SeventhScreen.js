@@ -66,26 +66,7 @@ export default function Home(props) {
   };
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="#9b51e0">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          aria-label="simple tabs example"
-          indicatorColor=""
-          textColor="white"
-          variant="fullWidth"
-          backgroundColor="#9b51e0"
-          aria-label="full width tabs example"
-          classes={{ root: classes.rootPaper }}
-        >
-          <Tab label="Trilhas" {...a11yProps(0)} />
-        </Tabs>
-      </AppBar>
-      <TabPanel p={3} value={value} index={0}>
-        <TrilhaSelected/>
-      </TabPanel>
-  
-      <TabsBottom />
+     Preimio indiviual
     </div>
   );
 }
