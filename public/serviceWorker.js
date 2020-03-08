@@ -1,7 +1,7 @@
 // Flag for enabling cache in production
 var doCache = true;
 
-var CACHE_NAME = 'pwa-app-cache';
+var CACHE_NAME = 'humbbetao.github.io-2020-08/03-01.59';
 
 // Delete old caches
 self.addEventListener('activate', event => {
