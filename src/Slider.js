@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import styled from "styled-components";
+import Label from "./Label";
 const Plano = styled.div`
   border-radius: 4px;
   //   box-shadow: 0 0 8px 0 19;
@@ -20,7 +21,7 @@ const PlanoMobile = styled(Plano)`
   margin: 16px;
 
   box-sizing: border-box;
-  background-color: #ccc;
+  // background-color: #ccc;
 `;
 
 const useStyles = makeStyles(theme => ({
@@ -32,7 +33,7 @@ const useStyles = makeStyles(theme => ({
     flexWrap: "wrap"
   },
   rootPaper: {
-    backgroundColor: "#ccc",
+    // backgroundColor: "#ccc",
     // margin: theme.spacing(1),
     width: "calc(100% -  16px)",
     height: theme.spacing(16),
@@ -42,7 +43,10 @@ const useStyles = makeStyles(theme => ({
     margin: "16px",
     left: "16px",
     right: "16px",
-    boxSizing: "border-box"
+    boxSizing: "border-box",
+    position: "absolute",
+    // width:'100%',
+    height: "200px"
   },
   rootButton: {
     backgroundColor: "#9b51e0",
@@ -66,13 +70,64 @@ export default function SimpleSlider() {
   return (
     <Slider {...settings}>
       <PlanoMobile classes={{ root: classes.rootPaper }} elevation={3}>
-        teste1
+        <img
+          src={require("./Rectangle 2.png")}
+          style={{ position: "relative", width: "280px", height: "170px" }}
+        ></img>
+        <div
+          style={{
+            color: "#fff",
+            zIndex: 1,
+            display: "flex",
+            width: "100%",
+            height: "100%",
+            position: "relative",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          Engenharia da eletrônica
+        </div>
+      </PlanoMobile>{" "}
+      <PlanoMobile classes={{ root: classes.rootPaper }} elevation={3}>
+        <img
+          src={require("./Rectangle 2.png")}
+          style={{ position: "absolute", width: "280px", height: "170px" }}
+        ></img>
+        <div
+          style={{
+            color: "#fff",
+            zIndex: 1,
+            display: "flex",
+            width: "100%",
+            height: "100%",
+            position: "relative",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          Engenharia da Mecânica
+        </div>
       </PlanoMobile>
       <PlanoMobile classes={{ root: classes.rootPaper }} elevation={3}>
-        teste2
-      </PlanoMobile>
-      <PlanoMobile classes={{ root: classes.rootPaper }} elevation={3}>
-        teste3
+        <img
+          src={require("./Rectangle 2.png")}
+          style={{ position: "absolute", width: "280px", height: "170px" }}
+        ></img>
+        <div
+          style={{
+            color: "#fff",
+            zIndex: 1,
+            display: "flex",
+            width: "100%",
+            height: "100%",
+            position: "relative",
+            alignItems: "center",
+            justifyContent: "center"
+          }}
+        >
+          Engenharia da Mecânica
+        </div>
       </PlanoMobile>
     </Slider>
   );

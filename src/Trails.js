@@ -31,13 +31,16 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     height: theme.spacing(16),
     display: "flex",
-    alignItems: "flex-end"
+    alignItems: "flex-end",
+    position:"relative"
   },
   rootButton: {
     // backgroundColor: "#9b51e0",/
     background: "linear-gradient(110.73deg, #871AB0 2.42%, #E435F3 85.64%);",
     color: "#fff",
-    width: "100%"
+    width: "100%",
+    zIndex:1,
+    position:"absolute"
   }
 }));
 
@@ -60,6 +63,7 @@ export default function Trails(props) {
       </Label>
       <Spacing height={2} />
       <Paper classes={{ root: classes.rootPaper }} elevation={3}>
+        <img src={require("./home.png")} width="100%" height="100%"></img>
         <Button
           onClick={() => history.push("./clicked")}
           variant="contained"
