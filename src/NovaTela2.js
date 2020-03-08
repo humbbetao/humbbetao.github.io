@@ -68,7 +68,7 @@ export default function Trails(props) {
         }}
       >
         <Label fontSize="16px">Nível 1</Label>
-        <Money> R$ 2,00</Money>
+        <Money>Recompensa R$ 2,00</Money>
       </div>
       <Spacing height={2} />
       <Paper

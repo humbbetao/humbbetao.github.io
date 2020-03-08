@@ -69,7 +69,7 @@ export default function Trails(props) {
 
   return (
     <div className={classes.root}>
-      Preimiação
+      Premiação
       <Icon></Icon>
       <Label>Você agora é um entusiasta</Label>
       <Label fontSize="14px" color="#ccc">
@@ -78,7 +78,7 @@ export default function Trails(props) {
         boa sorte!
       </Label>
       <Button
-        onClick={() => history.push("./clicked6")}
+        onClick={() => history.push("./clicked")}
         variant="contained"
         classes={{ root: classes.rootButton }}
       >
@@ -90,12 +90,17 @@ export default function Trails(props) {
           if (navigator.share) {
             navigator
               .share({
-                title: "web.dev",
-                text: "Check out web.dev.",
-                url: "https://web.dev/"
+                title: "Teteu app",
+                text: "Acesse o teteu app",
+                url: "https://humbbetao-github-io.now.sh/"
               })
-              .then(() => console.log("Successful share"))
+              .then(() => {
+                console.log("Successful share");
+                history.push("./clicked");
+              })
               .catch(error => console.log("Error sharing", error));
+          } else {
+            console.log("não pode compartilhar");
           }
         }}
         variant="contained"

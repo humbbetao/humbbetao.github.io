@@ -92,7 +92,7 @@ export default function Trails(props) {
         }}
       >
         <Label fontSize="16px">Nível 2</Label>
-        <Money> bloqueado</Money>
+        <Money> Recompensa R$3,00</Money>
       </div>
       <Spacing height={2} />
       <Paper
@@ -102,7 +102,7 @@ export default function Trails(props) {
         classes={{ root: classes.rootPaper }}
         elevation={0}
       >
-        <img src={require("./Group 35.png")} width="100%" height="100%"></img>
+        <img src={require("./Group 36.png")} width="100%" height="100%"></img>
       </Paper>
 
       <Spacing height={2} />

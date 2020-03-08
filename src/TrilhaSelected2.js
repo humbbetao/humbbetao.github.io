@@ -18,7 +18,7 @@ import Divider from "@material-ui/core/Divider";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import TabPanel from "./TabPanel";
-import NovaTela1 from "./NovaTela1";
+import NovaTela3 from "./NovaTela3";
 import NovaTela2 from "./NovaTela2";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Label from "./Label";
@@ -123,7 +123,7 @@ export default function CustomizedDividers() {
           </div>
         </StyledToggleButtonGroup>
         <TabPanel p={3} value={value} index={1}>
-          <NovaTela1></NovaTela1>
+          <NovaTela3></NovaTela3>
         </TabPanel>
         <TabPanel p={3} value={value} index={2}>
           <NovaTela2></NovaTela2>
