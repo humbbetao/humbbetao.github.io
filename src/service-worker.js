@@ -1,15 +1,3 @@
-// This optional code is used to register a service worker.
-// register() is not called by default.
-
-// This lets the app load faster on subsequent visits in production, and gives
-// it offline capabilities. However, it also means that developers (and users)
-// will only see deployed updates on subsequent visits to a page, after all the
-// existing tabs open on the page have been closed, since previously cached
-// resources are updated in the background.
-
-// To learn more about the benefits of this model and instructions on how to
-// opt-in, read https://bit.ly/CRA-PWA
-
 const isLocalhost = Boolean(
   window.location.hostname === "localhost" ||
     // [::1] is the IPv6 localhost address.
@@ -139,3 +127,97 @@ export function unregister() {
       });
   }
 }
+
+// Flag for enabling cache in production
+var doCache = true;
+
+var CACHE_NAME = 'humbbetao.github.io-2020-08/03-01.59';
+
+// Delete old caches
+self.addEventListener('activate', event => {
+  const currentCachelist = [CACHE_NAME];
+  event.waitUntil(
+    caches.keys()
+      .then(keyList =>
+        Promise.all(keyList.map(key => {
+          if (!currentCachelist.includes(key)) {
+            return caches.delete(key);
+          }
+        }))
+      )
+  );
+});
+
+// This triggers when user starts the app
+self.addEventListener('install', function(event) {
+  if (doCache) {
+    event.waitUntil(
+      caches.open(CACHE_NAME)
+        .then(function(cache) {
+          fetch('manifest.json')
+            .then(response => {
+              response.json();
+            })
+            .then(assets => {
+              // We will cache initial page and the main.js
+              // We could also cache assets like CSS and images
+              const urlsToCache = [
+                '/',
+                assets['main.js']
+              ];
+              cache.addAll(urlsToCache);
+            })
+        })
+    );
+  }
+});
+
+// // Here we intercept request and serve up the matching files
+// window.addEventListener('fetch', function(event) {
+//   if (doCache) {
+//     event.respondWith(
+//       caches.match(event.request).then(function(response) {
+//         return response || fetch(event.request);
+//       })
+//     );
+//   }
+// // });
+
+// window.addEventListener('install', async e => {
+//   const cache = await caches.open(cacheName);
+//   await cache.addAll(staticAssets);
+//   return self.skipWaiting();
+// });
+
+// window.addEventListener('activate', e => {
+//   self.clients.claim();
+// });
+
+// window.addEventListener('fetch', async e => {
+//   const req = e.request;
+//   const url = new URL(req.url);
+
+//   if (url.origin === location.origin) {
+//     e.respondWith(cacheFirst(req));
+//   } else {
+//     e.respondWith(networkAndCache(req));
+//   }
+// });
+
+// async function cacheFirst(req) {
+//   const cache = await caches.open(cacheName);
+//   const cached = await cache.match(req);
+//   return cached || fetch(req);
+// }
+
+// async function networkAndCache(req) {
+//   const cache = await caches.open(cacheName);
+//   try {
+//     const fresh = await fetch(req);
+//     await cache.put(req, fresh.clone());
+//     return fresh;
+//   } catch (e) {
+//     const cached = await cache.match(req);
+//     return cached;
+//   }
+// }

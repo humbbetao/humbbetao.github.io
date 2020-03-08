@@ -1,11 +1,11 @@
 {
-  "name": "Matheus app",
-  "short_name": "Teteu",
+  "name": "Bad News",
+  "short_name": "News",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#fff",
   "background_color": "#fff",
-  "description": "Teteu app for study",
+  "description": "A news app.",
   "icons": [
     {
       "src": "./icon-512x512.png",
