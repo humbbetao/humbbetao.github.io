@@ -11,32 +11,23 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
-
-const Label = styled.div`
-  font-style: normal;
-  font-weight: bold;
-  font-size: ${props => props.fontSize || "20px"};
-  line-height: 23px;
-`;
-
-const Spacing = styled.div`
-  width: 100%;
-  height: ${props => `${props.height * 8}px`};
-`;
-
-const Container = styled.div`
-  width: 100%;
-  height: 250px;
-`;
+import ThumbUp from "@material-ui/icons/ThumbUp";
+import ThumbDown from "@material-ui/icons/ThumbDown";
+import Label from "./Label";
+import Spacing from "./Spacing";
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: "flex",
     flex: "1",
     width: "100%",
-    flexDirection: "row",
+    flexDirection: "column",
     flexWrap: "wrap",
-    backgroundColor: "#8A1BB2"
+    backgroundColor: "#8A1BB2",
+    padding: "40px 32px",
+    color: "#fff",
+    textAlign: "center",
+    boxSizing: "border-box"
   },
   rootPaper: {
     backgroundColor: "#ccc",
@@ -47,17 +38,18 @@ const useStyles = makeStyles(theme => ({
     alignItems: "flex-end"
   },
   rootButton: {
-    backgroundColor: "#9b51e0",
+    backgroundColor: "#8A1BB2",
+    border: "1px solid #8A1BB2",
     color: "#fff",
     width: "100%"
   },
   formControl: {
     margin: theme.spacing(3)
-  }
+  },
+  formLabel: { color: "#fff", fontWeight: 500 }
 }));
 
 export default function Trails(props) {
-  console.log(props);
   const classes = useStyles();
   let history = useHistory();
   const [value, setValue] = React.useState("female");
@@ -68,20 +60,26 @@ export default function Trails(props) {
 
   return (
     <div className={classes.root}>
-      <Label fontSize="20px">Esse conteúdo foi útil para você? </Label>
+      <Label fontSize="20px" color="white">
+        Esse conteúdo foi útil para você?
+      </Label>
+      <Spacing height={20} />
       <Button
-        onClick={() => history.push("./clicked4")}
+        onClick={() => history.push("./clicked3")}
         variant="contained"
         classes={{ root: classes.rootButton }}
+        endIcon={<ThumbUp />}
       >
-        Primary
+        Sim, gostei
       </Button>
+      <Spacing height={2} />
       <Button
-        onClick={() => history.push("./clicked4")}
+        onClick={() => history.push("./clicked3")}
         variant="contained"
         classes={{ root: classes.rootButton }}
+        startIcon={<ThumbDown />}
       >
-        Primary
+        Não gostei
       </Button>
     </div>
   );

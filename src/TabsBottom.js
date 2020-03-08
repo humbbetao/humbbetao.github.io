@@ -33,9 +33,9 @@ export default function IconLabelTabs() {
         textColor="secondary"
         aria-label="icon label tabs example"
       >
-        <Tab icon={<PhoneIcon />} label="RECENTS" />
-        <Tab icon={<FavoriteIcon />} label="FAVORITES" />
-        <Tab icon={<PersonPinIcon />} label="NEARBY" />
+        <Tab icon={<PhoneIcon />} label="Trilhas" />
+        <Tab icon={<FavoriteIcon />} label="Favoritos" />
+        <Tab icon={<PersonPinIcon />} label="Resgates" />
       </Tabs>
     // </Paper>
   );

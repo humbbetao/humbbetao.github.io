@@ -17,10 +17,11 @@ import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import Divider from "@material-ui/core/Divider";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
-import TabPanel from './TabPanel'
-import NovaTela1 from './NovaTela1'
-import NovaTela2 from './NovaTela2'
-
+import TabPanel from "./TabPanel";
+import NovaTela1 from "./NovaTela1";
+import NovaTela2 from "./NovaTela2";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Label from "./Label";
 const StyledToggleButtonGroup = withStyles(theme => ({
   grouped: {
     margin: theme.spacing(0.5),
@@ -32,15 +33,16 @@ const StyledToggleButtonGroup = withStyles(theme => ({
     "&:first-child": {
       borderRadius: theme.shape.borderRadius
     }
+  },
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    "& > *": {
+      margin: theme.spacing(1)
+    }
   }
 }))(ToggleButtonGroup);
-
-const Label = styled.div`
-  font-style: normal;
-  font-weight: bold;
-  font-size: ${props => props.fontSize || "20px"};
-  line-height: 23px;
-`;
 
 const Spacing = styled.div`
   width: 100%;
@@ -58,7 +60,8 @@ const useStyles = makeStyles(theme => ({
     flex: "1",
     width: "100%",
     flexDirection: "row",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    justifyContent: "center"
   },
   rootPaper: {
     backgroundColor: "#ccc",
@@ -69,24 +72,13 @@ const useStyles = makeStyles(theme => ({
     alignItems: "flex-end"
   },
   rootButton: {
-    backgroundColor: "#9b51e0",
+    backgroundColor: "#8A1BB2",
     color: "#fff",
-    width: "100%"
+    width: "auto",
+    display: "flex",
+    justifyContent: "center"
   }
 }));
-
-// export default function Started() {
-//   const classes = useStyles();
-//   return (
-//     <div>
-//       <Label> Similares a Engenheira Mecatrônica</Label>
-//       <Container>
-//         <Slider></Slider>
-//       </Container>
-//       <PieChart></PieChart>
-//     </div>
-//   );
-// }
 
 export default function CustomizedDividers() {
   const [alignment, setAlignment] = React.useState("left");
@@ -101,7 +93,7 @@ export default function CustomizedDividers() {
     setAlignment(newAlignment);
   };
 
-      const classes = useStyles();
+  const classes = useStyles();
 
   return (
     <div>
@@ -113,20 +105,30 @@ export default function CustomizedDividers() {
           onChange={handleAlignment}
           aria-label="text alignment"
         >
-          <ToggleButton
-            onClick={() => setValue(1)}
-            value="left"
-            aria-label="left aligned"
-          >
-            Lições
-          </ToggleButton>
-          <ToggleButton
-            onClick={() => setValue(2)}
-            value="center"
-            aria-label="centered"
-          >
-            Progresso
-          </ToggleButton>
+          <div className={classes.root}>
+            <ButtonGroup
+              classes={{ root: classes.rootButton }}
+              color="#8A1BB2"
+              aria-label="outlined primary button group"
+            >
+              <Button
+                onClick={() => {
+                  setValue(1);
+                }}
+                variant={value === 1 && "contained"}
+              >
+                Lições
+              </Button>
+              <Button
+                onClick={() => {
+                  setValue(2);
+                }}
+                variant={value === 2 && "contained"}
+              >
+                Progresso
+              </Button>
+            </ButtonGroup>
+          </div>
         </StyledToggleButtonGroup>
         <TabPanel p={3} value={value} index={1}>
           <NovaTela1></NovaTela1>

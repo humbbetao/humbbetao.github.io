@@ -5,12 +5,7 @@ import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import Slider from "./Slider";
 import { useHistory } from "react-router-dom";
-const Label = styled.div`
-  font-style: normal;
-  font-weight: bold;
-  font-size: ${props => props.fontSize || "20px"};
-  line-height: 23px;
-`;
+import Label from "./Label";
 
 const Spacing = styled.div`
   width: 100%;
@@ -39,19 +34,30 @@ const useStyles = makeStyles(theme => ({
     alignItems: "flex-end"
   },
   rootButton: {
-    backgroundColor: "#9b51e0",
+    // backgroundColor: "#9b51e0",/
+    background: "linear-gradient(110.73deg, #871AB0 2.42%, #E435F3 85.64%);",
     color: "#fff",
     width: "100%"
   }
 }));
 
+// #E435F3
+// #8A1BB2
+
 export default function Trails(props) {
-  console.log(props);
   const classes = useStyles();
   let history = useHistory();
   return (
     <div className={classes.root}>
-      <Label>Trilha recomendada </Label>
+      <Label fontSize="28px" width="100%">
+        Olá, Mateus
+      </Label>
+      <Spacing height={1} />
+      <br></br>
+      <Label fontSize="16px">sua trilha de</Label>
+      <Label fontSize="16px" color="#8A1BB2">
+        Engenharia Mecatrônica
+      </Label>
       <Spacing height={2} />
       <Paper classes={{ root: classes.rootPaper }} elevation={3}>
         <Button
@@ -59,7 +65,7 @@ export default function Trails(props) {
           variant="contained"
           classes={{ root: classes.rootButton }}
         >
-          Primary
+          Sonhar
         </Button>
       </Paper>
       <Spacing height={4} />

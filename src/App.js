@@ -20,7 +20,6 @@ import SeventhScreen from "./SeventhScreen";
 
 function TabPanel(props) {
   const { children, value, index, p, ...other } = props;
-  console.log(value, index);
   return (
     <Typography
       component="div"

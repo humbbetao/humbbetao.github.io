@@ -5,13 +5,7 @@ import styled from "styled-components";
 import Button from "@material-ui/core/Button";
 import Slider from "./Slider";
 import { useHistory } from "react-router-dom";
-const Label = styled.div`
-  font-style: normal;
-  font-weight: bold;
-  font-size: ${props => props.fontSize || "20px"};
-  line-height: 23px;
-`;
-
+import Label from "./Label";
 const Spacing = styled.div`
   width: 100%;
   height: ${props => `${props.height * 8}px`};
@@ -58,61 +52,77 @@ const Money = styled.div`
 `;
 
 export default function Trails(props) {
-  console.log(props);
   const classes = useStyles();
   let history = useHistory();
   return (
     <div className={classes.root}>
-      <Label>Trilha recomendada </Label>
-      <Label> Similares a Engenheira Mecatrônica</Label>
+      <Label fontSize="20px">Trilha recomendada </Label>
+      <Spacing height={1} />
       <div
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-between"
+          justifyContent: "space-between",
+          width: "100%,",
+          flex: 1
         }}
       >
-        <Label fontSize="19px">Nível 1</Label>
+        <Label fontSize="16px">Nível 1</Label>
         <Money> R$ 2,00</Money>
       </div>
       <Spacing height={2} />
-      <Paper classes={{ root: classes.rootPaper }} elevation={3}></Paper>
+      <Paper
+        onClick={() => {
+          history.push("/clicked2");
+        }}
+        classes={{ root: classes.rootPaper }}
+        elevation={3}
+      ></Paper>
+
+      <Spacing height={1} />
       <div
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-between"
+          justifyContent: "space-between",
+          width: "100%,",
+          flex: 1
         }}
       >
-        <Label fontSize="19px">Nível 1</Label>
-        <Money> R$ 2,00</Money>
-      </div>
-      <Spacing height={2} />
-      <Paper classes={{ root: classes.rootPaper }} elevation={3}></Paper>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between"
-        }}
-      >
-        <Label fontSize="19px">Nível 2</Label>
+        <Label fontSize="16px">Nível 1</Label>
         <Money> bloqueado</Money>
       </div>
       <Spacing height={2} />
-      <Paper classes={{ root: classes.rootPaper }} elevation={3}></Paper>
+      <Paper
+        onClick={() => {
+          history.push("/clicked2");
+        }}
+        classes={{ root: classes.rootPaper }}
+        elevation={3}
+      ></Paper>
+
+      
+      <Spacing height={2} />
       <div
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-between"
+          justifyContent: "space-between",
+          width: "100%,",
+          flex: 1
         }}
       >
-        <Label fontSize="19px">Nível 2</Label>
+        <Label fontSize="16px">Nível 1</Label>
         <Money> bloqueado</Money>
       </div>
       <Spacing height={2} />
-      <Paper classes={{ root: classes.rootPaper }} elevation={3}></Paper>
+      <Paper
+        onClick={() => {
+          history.push("/clicked2");
+        }}
+        classes={{ root: classes.rootPaper }}
+        elevation={3}
+      ></Paper>
     </div>
   );
 }

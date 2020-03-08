@@ -49,10 +49,11 @@ export default function Started() {
   const classes = useStyles();
   return (
     <div>
-      <Label> Similares a Engenheira Mecatrônica</Label>
+      <Label> trilhas iniciadas</Label>
       <Container>
         <Slider></Slider>
       </Container>
+      <Label> seu progresso geral</Label>
       <PieChart></PieChart>
     </div>
   );

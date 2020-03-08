@@ -57,7 +57,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Trails(props) {
-  console.log(props);
   const classes = useStyles();
   let history = useHistory();
   const [value, setValue] = React.useState("female");

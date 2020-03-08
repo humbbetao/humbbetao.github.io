@@ -11,7 +11,6 @@ import Started from "./Started";
 import TabsBottom from "./TabsBottom";
 function TabPanel(props) {
   const { children, value, index, p, ...other } = props;
-  console.log(value, index);
   return (
     <Typography
       component="div"
@@ -51,14 +50,13 @@ const useStyles = makeStyles(theme => ({
   },
   rootPaper: {
     flexGrow: 1,
-    backgroundColor: "#9b51e0",
+    background: "linear-gradient(110.73deg, #871AB0 2.42%, #E435F3 85.64%);",
     color: "#ffffff",
     border: "0"
   }
 }));
 
 export default function Home(props) {
-  console.log(props);
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 

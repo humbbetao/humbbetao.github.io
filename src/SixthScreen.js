@@ -10,7 +10,6 @@ import TrilhaSelected from "./TrilhaSelected";
 import TabsBottom from "./TabsBottom";
 function TabPanel(props) {
   const { children, value, index, p, ...other } = props;
-  console.log(value, index);
   return (
     <Typography
       component="div"
@@ -57,7 +56,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function Home(props) {
-  console.log(props);
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 

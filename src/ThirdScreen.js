@@ -11,13 +11,7 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
-
-const Label = styled.div`
-  font-style: normal;
-  font-weight: bold;
-  font-size: ${props => props.fontSize || "20px"};
-  line-height: 23px;
-`;
+import Label from "./Label";
 
 const Spacing = styled.div`
   width: 100%;
@@ -34,9 +28,13 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flex: "1",
     width: "100%",
-    flexDirection: "row",
+    flexDirection: "column",
     flexWrap: "wrap",
-    backgroundColor: "#8A1BB2"
+    backgroundColor: "#8A1BB2",
+    padding: "40px 32px",
+    color: "#fff",
+    textAlign: "center",
+    boxSizing: "border-box"
   },
   rootPaper: {
     backgroundColor: "#ccc",
@@ -53,11 +51,11 @@ const useStyles = makeStyles(theme => ({
   },
   formControl: {
     margin: theme.spacing(3)
-  }
+  },
+  formLabel: { color: "#fff", fontWeight: 500 }
 }));
 
 export default function Trails(props) {
-  console.log(props);
   const classes = useStyles();
   let history = useHistory();
   const [value, setValue] = React.useState("female");
@@ -68,55 +66,116 @@ export default function Trails(props) {
 
   return (
     <div className={classes.root}>
-      <Label fontSize="28px">Quiz Nivel 1 </Label>
-      <Label fontSize="16px">Quiz Nivel 1 </Label>
+      <Label fontSize="28px" color="white">
+        Quiz:
+      </Label>
+      <Label fontSize="16px" color="white">
+        Nível 1
+      </Label>
       <FormControl component="fieldset" className={classes.formControl}>
-        <FormLabel component="legend">Gender</FormLabel>
+        <FormLabel component="legend" className={classes.formLabel}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+        </FormLabel>
         <RadioGroup
           aria-label="gender"
           name="gender1"
           value={value}
           onChange={handleChange}
         >
-          <FormControlLabel value="female" control={<Radio />} label="Female" />
-          <FormControlLabel value="male" control={<Radio />} label="Male" />
-          <FormControlLabel value="other" control={<Radio />} label="Other" />
+          <FormControlLabel
+            value="female"
+            control={<Radio />}
+            label="Option 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
+          <FormControlLabel
+            value="male"
+            control={<Radio />}
+            label="Option 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
+          <FormControlLabel
+            value="other"
+            control={<Radio />}
+            label="Option 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
+          <FormControlLabel
+            value="other"
+            control={<Radio />}
+            label="Option 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
         </RadioGroup>
       </FormControl>
       <FormControl component="fieldset" className={classes.formControl}>
-        <FormLabel component="legend">Gender</FormLabel>
+        <FormLabel component="legend" className={classes.formLabel}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+        </FormLabel>
         <RadioGroup
           aria-label="gender"
           name="gender1"
           value={value}
           onChange={handleChange}
         >
-          <FormControlLabel value="female" control={<Radio />} label="Female" />
-          <FormControlLabel value="male" control={<Radio />} label="Male" />
-          <FormControlLabel value="other" control={<Radio />} label="Other" />
+          <FormControlLabel
+            value="female"
+            control={<Radio />}
+            label="Option 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
+          <FormControlLabel
+            value="male"
+            control={<Radio />}
+            label="Option 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
+          <FormControlLabel
+            value="other"
+            control={<Radio />}
+            label="Option 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
+          <FormControlLabel
+            value="other"
+            control={<Radio />}
+            label="Option 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
         </RadioGroup>
       </FormControl>
       <FormControl component="fieldset" className={classes.formControl}>
-        <FormLabel component="legend">Gender</FormLabel>
+        <FormLabel component="legend" className={classes.formLabel}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+        </FormLabel>
         <RadioGroup
           aria-label="gender"
           name="gender1"
           value={value}
           onChange={handleChange}
         >
-          <FormControlLabel value="female" control={<Radio />} label="Female" />
-          <FormControlLabel value="male" control={<Radio />} label="Male" />
-          <FormControlLabel value="other" control={<Radio />} label="Other" />
+          <FormControlLabel
+            value="female"
+            control={<Radio />}
+            label="Option 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
+          <FormControlLabel
+            value="male"
+            control={<Radio />}
+            label="Option 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
+          <FormControlLabel
+            value="other"
+            control={<Radio />}
+            label="Option 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
+          <FormControlLabel
+            value="other"
+            control={<Radio />}
+            label="Option 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+          />
         </RadioGroup>
       </FormControl>
- 
+
       <Button
-          onClick={() => history.push("./clicked3")}
-          variant="contained"
-          classes={{ root: classes.rootButton }}
-        >
-          Click
-        </Button>
+        onClick={() => history.push("./clicked3")}
+        variant="contained"
+        classes={{ root: classes.rootButton }}
+      >
+        Click
+      </Button>
     </div>
   );
 }
