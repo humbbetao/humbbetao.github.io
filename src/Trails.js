@@ -57,7 +57,7 @@ export default function Trails(props) {
       </Label>
       <Spacing height={1} />
       <br></br>
-      <Label fontSize="16px">sua trilha de</Label>
+      <Label fontSize="16px">sua trilha de&nbsp;</Label>
       <Label fontSize="16px" color="#8A1BB2">
         Engenharia Mecatrônica
       </Label>
@@ -73,7 +73,7 @@ export default function Trails(props) {
         </Button>
       </Paper>
       <Spacing height={4} />
-      <Label> Similares a Engenheira Mecatrônica</Label>
+      <Label> Similares a Engenheria Mecatrônica</Label>
       <Container>
         <Slider></Slider>
       </Container>

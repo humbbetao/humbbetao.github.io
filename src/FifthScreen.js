@@ -90,9 +90,9 @@ export default function Trails(props) {
           if (navigator.share) {
             navigator
               .share({
-                title: "Teteu app",
-                text: "Acesse o teteu app",
-                url: "https://humbbetao-github-io.now.sh/"
+                title: "app Alva",
+                text: "Acesse o app Alva",
+                url: "http://bit.ly/alva2020"
               })
               .then(() => {
                 console.log("Successful share");

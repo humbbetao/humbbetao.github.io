@@ -1,11 +1,11 @@
 {
-  "name": "Bad News",
-  "short_name": "News",
+  "name": "Alva",
+  "short_name": "Alva",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#fff",
   "background_color": "#fff",
-  "description": "A news app.",
+  "description": "Alva",
   "icons": [
     {
       "src": "./logo512.png",
