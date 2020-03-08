@@ -52,20 +52,21 @@ export default function Trails(props) {
       <Label fontSize="28px" width="100%">
         Último Salvo
       </Label>
-      <Spacing height={1} />
-      <br></br>
-      <Label fontSize="16px">sua trilha de</Label>
-      <Label fontSize="16px" color="#8A1BB2">
-        Engenharia Mecatrônica
-      </Label>
+
       <Spacing height={2} />
       <Paper classes={{ root: classes.rootPaper }} elevation={3}></Paper>
       <Spacing height={4} />
-      <Label> Similares a Engenheira Mecatrônica</Label>
+      <Label> Engenharia Mecatrônica</Label>
       <Container>
         <Slider></Slider>
       </Container>
-      <Label> Similares a Engenheira Mecatrônica</Label>
+      <Spacing height={2} />
+      <Label> Engenharia de Dados</Label>
+      <Container>
+        <Slider></Slider>
+      </Container>
+      <Spacing height={2} />
+      <Label> Engenharia da Computação</Label>
       <Container>
         <Slider></Slider>
       </Container>

@@ -9,7 +9,7 @@ import Box from "@material-ui/core/Box";
 import Trails from "./Trails";
 import Started from "./Started";
 import TabsBottom from "./TabsBottom";
-import Favorites from './Favorites'
+import Favorites from "./Favorites";
 function TabPanel(props) {
   const { children, value, index, p, ...other } = props;
   return (
@@ -78,8 +78,7 @@ export default function Home(props) {
           aria-label="full width tabs example"
           classes={{ root: classes.rootPaper }}
         >
-          <Tab label="Trilhas" {...a11yProps(0)} />
-          <Tab label="Iniciado" {...a11yProps(1)} />
+          <Tab label="favoritos" {...a11yProps(0)} />
         </Tabs>
       </AppBar>
       <TabPanel p={3} value={value} index={0}>
