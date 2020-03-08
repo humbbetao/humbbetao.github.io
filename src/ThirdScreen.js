@@ -45,8 +45,8 @@ const useStyles = makeStyles(theme => ({
     alignItems: "flex-end"
   },
   rootButton: {
-    backgroundColor: "#9b51e0",
-    color: "#fff",
+    backgroundColor: "#fff",
+    color: "#9b51e0",
     width: "100%"
   },
   formControl: {
@@ -98,7 +98,7 @@ export default function Trails(props) {
             label="Option 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
           <FormControlLabel
-            value="other"
+            value="Some"
             control={<Radio />}
             label="Option 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
@@ -130,7 +130,7 @@ export default function Trails(props) {
             label="Option 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
           <FormControlLabel
-            value="other"
+            value="Some"
             control={<Radio />}
             label="Option 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
@@ -162,7 +162,7 @@ export default function Trails(props) {
             label="Option 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
           <FormControlLabel
-            value="other"
+            value="Some"
             control={<Radio />}
             label="Option 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
@@ -174,7 +174,7 @@ export default function Trails(props) {
         variant="contained"
         classes={{ root: classes.rootButton }}
       >
-        Click
+        Enviar respostas
       </Button>
     </div>
   );

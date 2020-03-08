@@ -12,13 +12,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import { ReactComponent as Icon } from "./icon.svg";
-const Label = styled.div`
-  font-style: normal;
-  font-weight: bold;
-  font-size: ${props => props.fontSize || "20px"};
-  line-height: 23px;
-`;
-
+import Label from "./Label";
 const Spacing = styled.div`
   width: 100%;
   height: ${props => `${props.height * 8}px`};
@@ -78,21 +72,36 @@ export default function Trails(props) {
       Preimiação
       <Icon></Icon>
       <Label>Você agora é um entusiasta</Label>
-      <Label>Você agora é um entusiasta</Label>
+      <Label fontSize="14px" color="#ccc">
+        Você está a um passo mais próximo de realizar o seu sonho, sabia? Por
+        isso gostaríamos te recompensar com R$ 2,00. Acreditamos no seu futuro,
+        boa sorte!
+      </Label>
       <Button
         onClick={() => history.push("./clicked6")}
         variant="contained"
         classes={{ root: classes.rootButton }}
       >
-        Premiação
+        Continuar aprendendo
       </Button>
       <Button
         variant="text"
-        onClick={() => history.push("./clicked6")}
+        onClick={() => {
+          if (navigator.share) {
+            navigator
+              .share({
+                title: "web.dev",
+                text: "Check out web.dev.",
+                url: "https://web.dev/"
+              })
+              .then(() => console.log("Successful share"))
+              .catch(error => console.log("Error sharing", error));
+          }
+        }}
         variant="contained"
         classes={{ root: classes.rootButtonColor }}
       >
-        Premiação
+        Compartilhar
       </Button>
     </div>
   );

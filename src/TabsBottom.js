@@ -8,12 +8,18 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import PersonPinIcon from "@material-ui/icons/PersonPin";
 import { useHistory } from "react-router-dom";
 
+import {ReactComponent as Icon1} from "./Heart.svg";
+import {ReactComponent as Icon2} from "./Heart.svg";
+import {ReactComponent as Icon3} from "./ShoppingCart.svg";
+
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
-    maxWidth: 500,
-    bottom: 0
-  }
+    width: '100%',
+    bottom: 0,
+    position:'fixed',
+    backgroundColor: 'white'
+  },
 });
 
 export default function IconLabelTabs() {
@@ -31,24 +37,42 @@ export default function IconLabelTabs() {
       value={value}
       onChange={handleChange}
       variant="fullWidth"
-      indicatorColor="secondary"
-      textColor="secondary"
+      indicatorColor="#9b51e0"
+      textColor="#9b51e0"
+      variant="fullWidth"
+      backgroundColor="#9b51e0"
       aria-label="icon label tabs example"
+      classes={{ root: classes.root }}
     >
       <Tab
+      classes={{root: classes.rootMovile}}
         onClick={() => history.push("./")}
-        icon={<PhoneIcon />}
+        icon={<Icon1 />}
         label="Trilhas"
+        indicatorColor="#9b51e0"
+        textColor="white"
+        variant="fullWidth"
+        backgroundColor="#9b51e0"
       />
       <Tab
+       classes={{root: classes.rootMovile}}
         onClick={() => history.push("./favoritos")}
-        icon={<FavoriteIcon />}
+        icon={<Icon2 />}
         label="Favoritos"
+        indicatorColor=""
+        textColor="white"
+        variant="fullWidth"
+        backgroundColor="#9b51e0"
       />
       <Tab
+       classes={{root: classes.rootMovile}}
         onClick={() => history.push("./resgatados")}
-        icon={<PersonPinIcon />}
+        icon={<Icon3 />}
         label="Resgates"
+        indicatorColor=""
+        textColor="white"
+        variant="fullWidth"
+        backgroundColor="#9b51e0"
       />
     </Tabs>
     // </Paper>
