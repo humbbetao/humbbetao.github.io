@@ -35,8 +35,9 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "row",
     flexWrap: "wrap",
     display: "flex",
-    justifyContent: "space-between",
-    height: "100%"
+    // justifyContent: "space-between",
+    height: "100%",
+    height: "80vh"
   },
   rootPaper: {
     backgroundColor: "#ccc",
@@ -58,7 +59,7 @@ export default function Started() {
   return (
     <div className={classes.root}>
       <Label> Seu Saldo</Label>
-      <Spacing height={3}></Spacing>
+      <Spacing height={1}></Spacing>
       <Label fontSize="28px" color="#871AB0">
         R$ 28,50
       </Label>
@@ -72,7 +73,6 @@ export default function Started() {
           Para cada recomendação, você recebe <b>10 reais</b> e o seu amigo
           também.
         </Label>
-        <Spacing height={1}></Spacing>
         <Button
           // onClick={() => history.push("./clicked4")}
           classes={{ root: { color: "#871AB0" } }}
@@ -83,15 +83,45 @@ export default function Started() {
         </Button>
         <Label fontSize="14px" color="#871AB0"></Label>
       </Container>
-      <Spacing height={1}></Spacing>
-
       <Label>O que resgatar</Label>
-      <Spacing height={1}></Spacing>
-      <img src={require("./iconreward01.png")} width="50px" height="50px"></img>
-      <img src={require("./iconreward02.png")} width="50px" height="50px"></img>
-      <img src={require("./iconreward03.png")} width="50px" height="50px"></img>
-      <img src={require("./iconreward04.png")} width="50px" height="50px"></img>
-      <img src={require("./iconreward05.png")} width="50px" height="50px"></img>
+      <Spacing height={0.5}></Spacing>
+      <div
+        style={{
+          display: "flex",
+          flex: "1",
+          width: "100%",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          display: "flex",
+          justifyContent: "space-between"
+        }}
+      >
+        <img
+          src={require("./iconreward04.png")}
+          width="50px"
+          height="50px"
+        ></img>
+        <img
+          src={require("./iconreward05.png")}
+          width="50px"
+          height="50px"
+        ></img>
+        <img
+          src={require("./iconreward01.png")}
+          width="50px"
+          height="50px"
+        ></img>
+        <img
+          src={require("./iconreward02.png")}
+          width="50px"
+          height="50px"
+        ></img>
+        <img
+          src={require("./iconreward03.png")}
+          width="50px"
+          height="50px"
+        ></img>
+      </div>
     </div>
   );
 }

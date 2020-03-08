@@ -89,7 +89,7 @@ export default function Trails(props) {
           flex: 1
         }}
       >
-        <Label fontSize="16px">Nível 1</Label>
+        <Label fontSize="16px">Nível 2</Label>
         <Money> bloqueado</Money>
       </div>
       <Spacing height={2} />
@@ -112,7 +112,7 @@ export default function Trails(props) {
           flex: 1
         }}
       >
-        <Label fontSize="16px">Nível 1</Label>
+        <Label fontSize="16px">Nível 3</Label>
         <Money> bloqueado</Money>
       </div>
       <Spacing height={2} />

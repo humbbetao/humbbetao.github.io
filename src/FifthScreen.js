@@ -78,7 +78,7 @@ export default function Trails(props) {
         boa sorte!
       </Label>
       <Button
-        onClick={() => history.push("./clicked")}
+        onClick={() => history.push("./clicked7")}
         variant="contained"
         classes={{ root: classes.rootButton }}
       >

@@ -17,6 +17,8 @@ import FourthScreen from "./FourthScreen";
 import FifthScreen from "./FifthScreen";
 import SixthScreen from "./SixthScreen";
 import SeventhScreen from "./SeventhScreen";
+import Eigth from "./Eigth";
+import NineScreen from "./NineScreen";
 import Favorties from "./Favorties";
 import Resgatados from "./Resgatados";
 
@@ -57,7 +59,7 @@ const useStyles = makeStyles(theme => ({
     height: "100vh",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-between"
+    // justifyContent: "space-between"
   },
   rootPaper: {
     flexGrow: 1,
@@ -90,6 +92,12 @@ export default function SimpleTabs() {
           </Route>
           <Route path="/clicked6">
             <SeventhScreen />
+          </Route>
+          <Route path="/clicked7">
+            <Eigth />
+          </Route>
+          <Route path="/clicked8">
+            <NineScreen />
           </Route>
           <Route path="/favoritos">
             <Favorties />

@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     flexWrap: "wrap",
     backgroundColor: "#8A1BB2",
-    padding: "40px 32px",
+    padding: "40px 14px",
     color: "#fff",
     textAlign: "center",
     boxSizing: "border-box"
@@ -52,7 +52,10 @@ const useStyles = makeStyles(theme => ({
   formControl: {
     margin: theme.spacing(3)
   },
-  formLabel: { color: "#fff", fontWeight: 500 }
+  formLabel: { color: "#fff", fontWeight: 500 },
+  rootJust: {
+    textAlign: "left"
+  }
 }));
 
 export default function Trails(props) {
@@ -76,30 +79,36 @@ export default function Trails(props) {
         <FormLabel component="legend" className={classes.formLabel}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit?
         </FormLabel>
+        <br></br>
         <RadioGroup
           aria-label="gender"
           name="gender1"
           value={value}
+          classes={{ root: classes.rootJust }}
           onChange={handleChange}
         >
           <FormControlLabel
             value="female"
             control={<Radio />}
+            classes={{ root: classes.rootJust }}
             label="Option 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
           <FormControlLabel
             value="male"
             control={<Radio />}
+            classes={{ root: classes.rootJust }}
             label="Option 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
           <FormControlLabel
             value="other"
             control={<Radio />}
+            classes={{ root: classes.rootJust }}
             label="Option 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
           <FormControlLabel
             value="Some"
             control={<Radio />}
+            classes={{ root: classes.rootJust }}
             label="Option 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
         </RadioGroup>
@@ -108,30 +117,36 @@ export default function Trails(props) {
         <FormLabel component="legend" className={classes.formLabel}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit?
         </FormLabel>
+        <br></br>
         <RadioGroup
           aria-label="gender"
           name="gender1"
           value={value}
+          classes={{ root: classes.rootJust }}
           onChange={handleChange}
         >
           <FormControlLabel
             value="female"
             control={<Radio />}
+            classes={{ root: classes.rootJust }}
             label="Option 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
           <FormControlLabel
             value="male"
             control={<Radio />}
+            classes={{ root: classes.rootJust }}
             label="Option 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
           <FormControlLabel
             value="other"
             control={<Radio />}
+            classes={{ root: classes.rootJust }}
             label="Option 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
           <FormControlLabel
             value="Some"
             control={<Radio />}
+            classes={{ root: classes.rootJust }}
             label="Option 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
         </RadioGroup>
@@ -140,35 +155,40 @@ export default function Trails(props) {
         <FormLabel component="legend" className={classes.formLabel}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit?
         </FormLabel>
+        <br></br>
         <RadioGroup
           aria-label="gender"
           name="gender1"
           value={value}
+          classes={{ root: classes.rootJust }}
           onChange={handleChange}
         >
           <FormControlLabel
             value="female"
             control={<Radio />}
+            classes={{ root: classes.rootJust }}
             label="Option 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
           <FormControlLabel
             value="male"
             control={<Radio />}
+            classes={{ root: classes.rootJust }}
             label="Option 2: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
           <FormControlLabel
             value="other"
             control={<Radio />}
+            classes={{ root: classes.rootJust }}
             label="Option 3: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
           <FormControlLabel
             value="Some"
             control={<Radio />}
+            classes={{ root: classes.rootJust }}
             label="Option 4: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           />
         </RadioGroup>
       </FormControl>
-
       <Button
         onClick={() => history.push("./clicked3")}
         variant="contained"

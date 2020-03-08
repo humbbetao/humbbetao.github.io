@@ -49,12 +49,7 @@ export default function Trails(props) {
   let history = useHistory();
   return (
     <div className={classes.root}>
-      <Label fontSize="28px" width="100%">
-        Último Salvo
-      </Label>
-
-      <Spacing height={2} />
-      <Paper classes={{ root: classes.rootPaper }} elevation={3}></Paper>
+     
       <Spacing height={4} />
       <Label> Engenharia Mecatrônica</Label>
       <Container>

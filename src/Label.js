@@ -7,7 +7,7 @@ const Label = styled.div`
   line-height: 23px;
   color: ${props => props.color || "black"};
   width: ${props => props.width || "auto"};
-  fontFamily:'Roboto', 
+  font-family: Roboto;
 `;
 
 export default Label;
