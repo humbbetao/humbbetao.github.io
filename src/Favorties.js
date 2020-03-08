@@ -9,17 +9,7 @@ import Box from "@material-ui/core/Box";
 import Trails from "./Trails";
 import Started from "./Started";
 import TabsBottom from "./TabsBottom";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import Home from "./Home";
-import SecondScreen from "./SecondScreen";
-import ThirdScreen from "./ThirdScreen";
-import FourthScreen from "./FourthScreen";
-import FifthScreen from "./FifthScreen";
-import SixthScreen from "./SixthScreen";
-import SeventhScreen from "./SeventhScreen";
-import Favorties from "./Favorties";
-import Resgatados from "./Resgatados";
-
+import Favorites from './Favorites'
 function TabPanel(props) {
   const { children, value, index, p, ...other } = props;
   return (
@@ -61,47 +51,41 @@ const useStyles = makeStyles(theme => ({
   },
   rootPaper: {
     flexGrow: 1,
-    backgroundColor: "#9b51e0",
+    background: "linear-gradient(110.73deg, #871AB0 2.42%, #E435F3 85.64%);",
     color: "#ffffff",
     border: "0"
   }
 }));
 
-export default function SimpleTabs() {
+export default function Home(props) {
   const classes = useStyles();
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   return (
     <div className={classes.root}>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/clicked">
-            <SecondScreen />
-          </Route>
-          <Route path="/clicked2">
-            <ThirdScreen />
-          </Route>
-          <Route path="/clicked3">
-            <FourthScreen />
-          </Route>
-          <Route path="/clicked4">
-            <FifthScreen />
-          </Route>
-          <Route path="/clicked5">
-            <SixthScreen />
-          </Route>
-          <Route path="/clicked6">
-            <SeventhScreen />
-          </Route>
-          <Route path="/favoritos">
-            <Favorties />
-          </Route>
-          <Route path="/resgatados">
-            <Resgatados />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+      <AppBar position="static" color="#9b51e0">
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="simple tabs example"
+          indicatorColor=""
+          textColor="white"
+          variant="fullWidth"
+          backgroundColor="#9b51e0"
+          aria-label="full width tabs example"
+          classes={{ root: classes.rootPaper }}
+        >
+          <Tab label="Trilhas" {...a11yProps(0)} />
+          <Tab label="Iniciado" {...a11yProps(1)} />
+        </Tabs>
+      </AppBar>
+      <TabPanel p={3} value={value} index={0}>
+        <Favorites />
+      </TabPanel>
+      <TabsBottom />
     </div>
   );
 }

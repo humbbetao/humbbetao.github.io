@@ -65,7 +65,7 @@ export default function Trails(props) {
       </Label>
       <Spacing height={20} />
       <Button
-        onClick={() => history.push("./clicked3")}
+        onClick={() => history.push("./clicked4")}
         variant="contained"
         classes={{ root: classes.rootButton }}
         endIcon={<ThumbUp />}
@@ -74,7 +74,7 @@ export default function Trails(props) {
       </Button>
       <Spacing height={2} />
       <Button
-        onClick={() => history.push("./clicked3")}
+        onClick={() => history.push("./clicked4")}
         variant="contained"
         classes={{ root: classes.rootButton }}
         startIcon={<ThumbDown />}

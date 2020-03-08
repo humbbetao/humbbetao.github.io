@@ -11,7 +11,7 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
-
+import { ReactComponent as Icon } from "./icon.svg";
 const Label = styled.div`
   font-style: normal;
   font-weight: bold;
@@ -34,9 +34,12 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flex: "1",
     width: "100%",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    backgroundColor: "#8A1BB2"
+    flexDirection: "column",
+    backgroundColor: "#fff",
+    justifyContent: "space-between",
+    alignItems: "center",
+    boxSizing: "border-box",
+    padding: "60px 32px"
   },
   rootPaper: {
     backgroundColor: "#ccc",
@@ -49,6 +52,11 @@ const useStyles = makeStyles(theme => ({
   rootButton: {
     backgroundColor: "#9b51e0",
     color: "#fff",
+    width: "100%"
+  },
+  rootButtonColor: {
+    color: "#fff",
+    color: "#9b51e0",
     width: "100%"
   },
   formControl: {
@@ -68,10 +76,21 @@ export default function Trails(props) {
   return (
     <div className={classes.root}>
       Preimiação
+      <Icon></Icon>
+      <Label>Você agora é um entusiasta</Label>
+      <Label>Você agora é um entusiasta</Label>
       <Button
         onClick={() => history.push("./clicked6")}
         variant="contained"
         classes={{ root: classes.rootButton }}
+      >
+        Premiação
+      </Button>
+      <Button
+        variant="text"
+        onClick={() => history.push("./clicked6")}
+        variant="contained"
+        classes={{ root: classes.rootButtonColor }}
       >
         Premiação
       </Button>
